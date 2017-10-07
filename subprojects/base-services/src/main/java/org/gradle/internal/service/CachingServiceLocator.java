@@ -66,6 +66,12 @@ public class CachingServiceLocator implements ServiceLocator {
         return all;
     }
 
+    // TODO:pm Lenient service location - Temporary
+    @Override
+    public <T> List<T> getAllLenient(Class<T> serviceType) {
+        throw new UnsupportedOperationException();
+    }
+
     @Override
     public synchronized <T> DefaultServiceLocator.ServiceFactory<T> getFactory(Class<T> serviceType) throws UnknownServiceException {
         DefaultServiceLocator.ServiceFactory<T> factory = findFactory(serviceType);
